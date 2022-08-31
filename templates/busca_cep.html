@@ -1,0 +1,70 @@
+<!-- 
+    NESTE ARQUIVO É AONDE UTILIZAMOS OS COMANDOS EM HTML para MELHORAR A VISUALIZAÇÃO DA NOSSA PAGINA
+
+    A ESTRUTURA ABAIXO É UMA ESTRUTURA MINIMA QUE NÃO ESTÁ SEGUINDO AS MELHORES PRATICAS
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CEP</title>
+</head>
+<body>
+    <!-- TITULO DA PÁGINA -->
+    <h1>Consulta CEP</h1>
+    
+    <!-- 
+        FORMULÁRIO PARA AS CONSULTAS
+
+        È NECESSARIO QUE O MÉTODO DE ENVIO SEJA DEFINIDO JÁ QUE O PADRÃO É GET E A MANEIRA CORRETA DOS ENVIOS DE DADOS DE FORMULÁRIO É PELO METODO POST
+
+        o ATRIBUTO PARA FAZER ESTÁ DEFINIÇÃO É METHOD
+    
+    -->
+    <form method="post">
+        <!-- 
+            TAG: ENTENDE-SE POR TAG (MARCAÇÃO) OS COMANDOS QUE ESTÃO ENTRE OS SIMBOLOS "<" E ">" 
+
+            ENTRADA DE DADOS UTILIZANDO A TAG <INPUT>
+
+            ATRIBUTOS:
+                TYPE: OS TIPOS POSSIVEIS DE ENTRADAS DE DADOS POR PÁGINAS WEB
+                    EXEMPLO TEXT E CHECKBOX
+                
+                NAME: NOME DA TAG QUE SERÁ UTILIZADO PARA CONSULTAR DO LADO DO FLASK
+
+                ID: CÓDIGO UNICO DO HTML
+            
+            A TAG <LABEL> É UTILIZADO PARA ASSOCIAR UM ROTULO A CAIXA DE TEXTO PARA INSERÇÃO DE DADDOS
+        -->
+
+        <label for="cep">CEP:</label>
+        <input type="text" name="cep" id="cep">
+
+        <!-- 
+            UTILIZAR A TAG BUTTON COM O ATRIBUTO TYPE SUBMIT PARA CRIAR UM BOTÃO PARA O ENVIO DO FORMULÁRIO
+
+            ATRIBUTO VALUE É PARA O TEXTO DENTRO DO INPUT(BUTTON)
+        -->
+
+        <button type="submit">Consultar CEP</button>
+    </form>
+
+<!-- 
+    ESPAÇO PARA APRESENTAR O ENDEREÇO CONSULTADO 
+
+    PARA ISTO SERÁ UTILIZADO A TAG <P>
+
+    A TAG <P> SIMBOLIZA UM PARAGRAFO DE TEXTO
+
+    UTILIZANDO VARIAVEIS DO JINJA É NECESSÁRIO QUE O NOME DA VARIAVEL ESTEJA ENTRE OS SIMBOLOS {{ E }}
+-->
+
+<p>{{endereco}}</p>
+
+</body>
+</html>
