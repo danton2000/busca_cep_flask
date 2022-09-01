@@ -6,6 +6,7 @@
 # pip install flask
 # É NECESSARIO QUE O FLASK SEJA IMPORTADO PARA DENTRO DO MODULO
 # POR BOAS PRÁTICAS É UTILIZADO A IMPORTAÇÃO RELATIVA
+from ast import Try
 from flask import (
     Flask,
     render_template, # FUNÇÃO PARA ASSOCIAR A PÁGINA HTML E EXECUTAR O JINJA
@@ -72,7 +73,11 @@ def busca_cep():
         print("RETORNO DADOS: ", retorno_dados)
 
         # ANALIZANDO OS DADOS QUE FORAM RETORNADOS, FOI ENTENDIDO QUE A CHAVE "ADDRESS" POSSUI O RESULTADO ESPERADO
-        endereco = retorno_dados["address"]
+       
+        try:
+            endereco = retorno_dados["address"]
+        except:
+            endereco = "Erro Encontrado !"
 
         print("ENDEREÇO: ", endereco)
 
